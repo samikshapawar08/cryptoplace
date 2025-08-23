@@ -29,9 +29,13 @@ const CoinContextProvider = (props) => {
 
   useEffect(() => {
     fetchAllCoin();
-  }, []);
+  }, [currency]);
 
-  const contextValue = {};
+  const contextValue = {
+    allCoin,
+    currency,
+    setCurrency,
+  };
 
   return (
     <CoinContext.Provider value={contextValue}>
